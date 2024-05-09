@@ -13,7 +13,8 @@ class Produto {
     private double peso;
     private String fabricante;
 
-    // Construtor
+    
+
     public Produto(int id, String codigoBarras, String sku, String nome, String descricao, String categoria, double preco, double peso, String fabricante) {
         this.id = id;
         this.codigoBarras = codigoBarras;
@@ -24,3 +25,9 @@ class Produto {
         this.preco = preco;
         this.peso = peso;
         this.fabricante = fabricante;
+
+        public String toString() {
+        return "ID: " + id + ", Código de Barras: " + codigoBarras + ", SKU: " + sku + ", Nome: " + nome + ", Descrição: " + descricao + ", Categoria: " + categoria + ", Preço: " + preco + ", Peso: " + peso + ", Fabricante: " + fabricante;
+    }
+}
+
