@@ -117,3 +117,66 @@ else{
 	    	System.out.println("Produto não encontrado");
 	       }
 }
+	
+public void AlterarProd() {
+	    	
+Scanner sc = new Scanner(System.in);
+	    
+int id, idAlt;
+String novoCodBarras, novaDescricao, novoSku, novoNome, novaCategoria, novoFabricante;
+double novoPreco, novoPeso;
+	       
+System.out.println("Informe o ID do produto que deseja alterar:");
+	idAlt = sc.nextInt();
+	       
+Produto produtoExiste = null;
+	       
+for(Produto produto : produtos)
+	{
+	 if(produto.getId()==idAlt)
+	    	{
+	    	produtoExiste = produto;
+	    	break;
+	    	}
+}
+if (produtoExiste != null)
+	{
+System.out.println("Entre com o novo nome: ");
+	novoNome = sc.next();
+		    	   
+System.out.println("Entre com o novo código de barras: ");
+	novoCodBarras = sc.next();
+		    	   
+System.out.println("Entre com o novo sku: ");
+	novoSku = sc.next();
+		    	   
+System.out.println("Entre com a descrição: ");
+	novaDescricao = sc.next();
+		    	   
+System.out.println("Entre com a nova categoria: ");
+	novaCategoria = sc.next();
+		    	   
+System.out.println("Entre com o novo fabricante: ");
+	novoFabricante = sc.next();
+		    	   
+System.out.println("Entre com o novo preço: ");
+	novoPreco = sc.nextDouble();
+		sc.next();
+		    	   
+System.out.println("Entre com o novo peso: ");
+	novoPeso = sc.nextDouble();
+		    	   
+Produto novoProduto = new Produto(idAlt, novoCodBarras, novoSku, novoNome,novaDescricao, novaCategoria, novoPreco, novoPeso, novoFabricante);
+
+produtos.remove(produtoExiste);
+produtos.add(novoProduto);
+		    	   
+System.out.println("Produto alterado!");
+		    	   
+}
+else
+{
+System.out.println("Produto não encontrado");
+	}
+}
+
