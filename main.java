@@ -30,43 +30,47 @@ while (true)
 input = sc.nextLine();
 try 
       {
-              opcao = Integer.parseInt(input);
-            } 
-            catch (NumberFormatException e) 
+      opcao = Integer.parseInt(input);
+   } 
+catch (NumberFormatException e) 
             {
-                System.out.println("Opção inválida. Digite um número inteiro.");
-                continue; // Reiniciar o loop
-            }
+System.out.println("Opção inválida. Digite um número inteiro.");
+ continue;
+   }
+if (opcao == 0) 
+{
+  break;
+}
 
-            if (opcao == 0) 
-            {
-                break;
-            }
-
-            switch (opcao) 
-            {
-                case 1:
-                    aplicacao.IncluirProd();
-                    break;
-                case 2:
-                    aplicacao.AlterarProd();
-                    break;
-                case 3:
-                    aplicacao.excluirProd();
-                    break;
-                case 4:
-           aplicacao.listarTodosProd();
+switch (opcao) 
+   {
+       
+case 1:
+aplicacao.IncluirProd();
+      break;
+       
+case 2:
+aplicacao.AlterarProd();
        break;
+                
+case 3:
+aplicacao.excluirProd();
+       break;
+                
+case 4:
+aplicacao.listarTodosProd();
+       break;
+                
 case 5:
 aplicacao.listarProduto();
        break;
        default:
+                
 System.out.println("Opção inválida");
        break;
        }
   }
-
-        sc.close();
-    }
+sc.close();
+}
 
 
